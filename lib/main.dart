@@ -35,14 +35,27 @@ class _MyHomePageState extends State<MyHomePage> {
     return showModalBottomSheet(
       context: context, 
       builder: (context) {
-        return Column(
-          children: [
-            ListTile(
-              leading: Icon(CupertinoIcons.bell),
-              title: Text('IOS'),
-              onTap: () => _selectItem('IOS'),
+        return Container(
+          height: 180,
+          color: Color(0xFF737373),
+            child: Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).canvasColor,
+              borderRadius: BorderRadius.only(
+                topLeft: const Radius.circular(10),
+                topRight: const Radius.circular(10),
+              )
             ),
-          ],
+            child: Column(
+              children: [
+                ListTile(
+                  leading: Icon(CupertinoIcons.bell),
+                  title: Text('IOS'),
+                  onTap: () => _selectItem('IOS'),
+                ),
+              ],
+            ),
+          ),
         );
       }
       );
